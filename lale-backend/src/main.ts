@@ -18,7 +18,8 @@ async function bootstrap() {
         transform: true, // Автоматически преобразует типы (например, строку "1" в число 1)
     }));
 
-    await app.listen(8000);
+    const port = Number(process.env.PORT) || 8000;
+    await app.listen(port, '0.0.0.0');
 }
 
 bootstrap();
